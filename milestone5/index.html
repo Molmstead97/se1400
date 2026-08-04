@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>ShopTCG</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="page-title">
+        <h1 class="logo-text">ShopTCG</h1>
+      </div>
+
+      <nav class="nav" aria-label="Main">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Magic: The Gathering</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Pokemon</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Yu-Gi-Oh!</a>
+          </li>
+          <li class="nav-item"><a href="" class="nav-link">FAQ</a></li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="page">
+      <main class="main">
+        <section class="hero">
+          <img
+            src="images/hero.jpg"
+            alt=""
+            class="hero-bg-img"
+            decoding="async"
+          />
+
+          <div class="hero-text">
+            <h2 id="hero-heading" class="hero-tagline">
+              Here at ShopTCG we have <em>all</em> of your trading card needs!
+              Whether it's Magic: The Gathering, Pokemon, or Yu-Gi-Oh!, we've
+              got you covered.
+            </h2>
+          </div>
+
+          <div class="hero-buttons">
+            <button
+              id="create-account-btn"
+              class="btn btn-create-account"
+              type="button"
+            >
+              Create Account
+            </button>
+            <button id="login-btn" class="btn btn-login" type="button">
+              Login
+            </button>
+          </div>
+        </section>
+
+        <section class="card-section" aria-labelledby="card-section-heading">
+          <h2 id="card-section-heading" class="visually-hidden">
+            Browse by trading card game
+          </h2>
+          <div class="card-grid">
+            
+              <img class="card-item" id="card-magic"
+                src="images/mtg.jpg"
+                alt="Magic: The Gathering card"
+                class="card-img"
+                decoding="async"
+              />
+           
+              <img class="card-item" id="card-pokemon"
+                src="images/pokemon.jpg"
+                alt="Pokemon card"
+                class="card-img"
+                decoding="async"
+              />
+
+              <img class="card-item" id="card-yugioh"
+                src="images/yugioh.jpg"
+                alt="Yu-Gi-Oh card"
+                class="card-img"
+                decoding="async"
+              />
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <img
+            src="images/footer-stock.jpg"
+            alt=""
+            class="footer-image"
+            width="320"
+            height="180"
+            decoding="async"
+          />
+          <p class="footer-copy">
+            &copy; <time datetime="2026">2026</time> ShopTCG. All rights
+            reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
