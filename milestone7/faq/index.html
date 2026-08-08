@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>FAQ — ShopTCG</title>
+  </head>
+
+  <body class="faq-page">
+    <header class="header">
+      <div class="page-title">
+        <h1 class="logo-text">ShopTCG</h1>
+      </div>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav-list"
+      >
+        <span class="visually-hidden">Menu</span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" aria-label="Main">
+        <ul id="primary-nav-list" class="nav-list">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="../magic/index.html" class="nav-link">Magic: The Gathering</a>
+          </li>
+          <li class="nav-item">
+            <a href="../pokemon/index.html" class="nav-link">Pokemon</a>
+          </li>
+          <li class="nav-item">
+            <a href="../yugioh/index.html" class="nav-link">Yu-Gi-Oh!</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" aria-current="page">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a href="../contact/index.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="page">
+      <main class="main">
+        <section class="faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="faq-heading">FAQ</h2>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">
+                What card games do you carry?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  We focus on Magic: The Gathering, Pokemon, and
+                  Yu-Gi-Oh! You can browse singles by game from the navigation menu.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do I need an account to place an order?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  No, creating a free account allows you to save shipping details and track orders, but you can still checkout as a guest.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                How do you grade card condition?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Singles are listed as Near Mint, Lightly Played, Moderately Played, or Heavily Played.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                How does shipping work?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Orders are shipped in sleeves, or small boxes depending on size and value.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Do you buy cards or accept trades?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Your collections and singles can be purchased for store credit, but trades are not accepted.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                What if my order is wrong or arrives damaged?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  That's your problem, not ours.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <p class="faq-more">
+            Still have questions?
+            <a href="../contact/index.html">Contact us</a>
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="../images/footer-stock-mobile.jpg"
+            />
+            <img
+              src="../images/footer-stock.jpg"
+              alt=""
+              class="footer-image"
+              width="320"
+              height="180"
+              decoding="async"
+            />
+          </picture>
+          <p class="footer-copy">
+            &copy; <time id="copyright-year" datetime="2026">2026</time>
+            ShopTCG. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var yearEl = document.getElementById("copyright-year");
+        if (yearEl) {
+          var year = String(new Date().getFullYear());
+          yearEl.textContent = year;
+          yearEl.setAttribute("datetime", year);
+        }
+
+        var toggle = document.querySelector(".nav-toggle");
+        var list = document.getElementById("primary-nav-list");
+        if (!toggle || !list) return;
+
+        toggle.addEventListener("click", function () {
+          var isOpen = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!isOpen));
+          list.classList.toggle("is-open", !isOpen);
+        });
+
+        list.querySelectorAll(".nav-link").forEach(function (link) {
+          link.addEventListener("click", function () {
+            toggle.setAttribute("aria-expanded", "false");
+            list.classList.remove("is-open");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

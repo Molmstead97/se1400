@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Pokemon — ShopTCG</title>
+  </head>
+
+  <body class="game-page game-page-pokemon" data-game="pokemon">
+    <header class="header">
+      <div class="page-title">
+        <h1 class="logo-text">ShopTCG</h1>
+      </div>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav-list"
+      >
+        <span class="visually-hidden">Menu</span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" aria-label="Main">
+        <ul id="primary-nav-list" class="nav-list">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="../magic/index.html" class="nav-link">Magic: The Gathering</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" aria-current="page">Pokemon</a>
+          </li>
+          <li class="nav-item">
+            <a href="../yugioh/index.html" class="nav-link">Yu-Gi-Oh!</a>
+          </li>
+          <li class="nav-item">
+            <a href="../faq/index.html" class="nav-link">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a href="../contact/index.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="page">
+      <main class="main game-main">
+        <div class="game-layout">
+        <aside class="year-filter" aria-labelledby="year-filter-heading">
+          <h2 id="year-filter-heading" class="year-filter-heading">Release year</h2>
+          <ul class="year-list"></ul>
+        </aside>
+
+        <section class="game-content" aria-labelledby="game-heading">
+          <h2 id="game-heading" class="game-heading">Pokemon</h2>
+
+          <form class="card-search" role="search">
+            <label class="visually-hidden" for="card-search-input">
+              Search Pokemon cards
+            </label>
+            <input
+              type="search"
+              id="card-search-input"
+              class="card-search-input"
+              placeholder="Search Pokemon cards"
+            />
+            <button type="submit" class="btn btn-search">Search</button>
+          </form>
+
+          <ul class="game-card-grid"></ul>
+        </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="../images/footer-stock-mobile.jpg"
+            />
+            <img
+              src="../images/footer-stock.jpg"
+              alt=""
+              class="footer-image"
+              width="320"
+              height="180"
+              decoding="async"
+            />
+          </picture>
+          <p class="footer-copy">
+            &copy; <time id="copyright-year" datetime="2026">2026</time>
+            ShopTCG. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var yearEl = document.getElementById("copyright-year");
+        if (yearEl) {
+          var year = String(new Date().getFullYear());
+          yearEl.textContent = year;
+          yearEl.setAttribute("datetime", year);
+        }
+
+        var toggle = document.querySelector(".nav-toggle");
+        var list = document.getElementById("primary-nav-list");
+        if (!toggle || !list) return;
+
+        toggle.addEventListener("click", function () {
+          var isOpen = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!isOpen));
+          list.classList.toggle("is-open", !isOpen);
+        });
+
+        list.querySelectorAll(".nav-link").forEach(function (link) {
+          link.addEventListener("click", function () {
+            toggle.setAttribute("aria-expanded", "false");
+            list.classList.remove("is-open");
+          });
+        });
+      })();
+    </script>
+    <script src="../game-page.js"></script>
+  </body>
+</html>
